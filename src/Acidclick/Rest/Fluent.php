@@ -13,7 +13,7 @@ class Fluent
 	private $token;
 
 	private $types = [];
-	private $method = '';
+	private $method = null;
 	private $ids = [];
 	private $query = [];
 	private $body = null;
@@ -72,6 +72,8 @@ class Fluent
 
 	public function buildUrl()
 	{
+		$this->validate();
+
 		$url = $this->url;
 		if(preg_match('/\/$/', $url)) $url = preg_replace('/\/$/', '', $url);
 		foreach($this->types as $index => $type){
@@ -80,4 +82,5 @@ class Fluent
 		}
 		return $url;
 	}
+
 }
