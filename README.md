@@ -23,7 +23,7 @@ Simple REST API fluent PHP library
 	$f->query('token', '123456')->get()->product(1)->review()->execute();
 
 	// add product review
-	$f->query('token', '123456')->post()->product(1)->review(['from' => 'Thomas', 'text' => 'Great product'])->execute();
+	$f->query('token', '123456')->post()->product(1)->review()->body(['from' => 'Thomas', 'text' => 'Great product'])->execute();
 ```
 
 ## Warning
