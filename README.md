@@ -26,5 +26,10 @@ Simple REST API fluent PHP library
 	$f->query('token', '123456')->post()->product(1)->review()->body(['from' => 'Thomas', 'text' => 'Great product'])->execute();
 ```
 
-## Warning
-Requires Guzzle.
+## Instalation
+
+The best way to install acidclick/acidrest is using  [Composer](http://getcomposer.org/):
+
+```sh
+$ composer require acidclick/acidrest:dev-master
+```
