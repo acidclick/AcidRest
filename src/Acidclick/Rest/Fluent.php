@@ -39,7 +39,7 @@ class Fluent
 			$this->method = $name;
 			if(isset($args[0])) $this->ids[] = $args[0];
 		} else if($name === 'query'){
-			$this->query[$args[1]] = $args[0];
+			$this->query[$args[0]] = $args[1];
 		} else if($name === 'body'){
 			$body = $args[0];
 			try{
