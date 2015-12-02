@@ -88,4 +88,9 @@ class Fluent
 		return $this->buildUrl() . (!empty($this->query) ? '?' . http_build_query($this->query) : '');
 	}
 
+	public function getBody()
+	{
+		return $this->body;
+	}
+
 }
