@@ -83,4 +83,9 @@ class Fluent
 		return $url;
 	}
 
+	public function getFullUrl()
+	{
+		return $this->buildUrl() . (!empty($this->query) ? '?' . http_build_query($this->query) : '');
+	}
+
 }
