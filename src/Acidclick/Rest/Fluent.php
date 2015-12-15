@@ -16,6 +16,7 @@ class Fluent
 	private $method = null;
 	private $ids = [];
 	private $query = [];
+	private $headers = [];
 	private $body = null;
 
 	private $request = null;
@@ -40,6 +41,10 @@ class Fluent
 			if(isset($args[0])) $this->ids[] = $args[0];
 		} else if($name === 'query'){
 			$this->query[$args[0]] = $args[1];
+		} else if($name === 'headers'){
+			$this->headers = $args;
+		} else if($name === 'header'){
+			$this->headers[$args[0]] = $args[1];
 		} else if($name === 'body'){
 			$body = $args[0];
 			try{
@@ -59,7 +64,7 @@ class Fluent
 	public function execute()
 	{
 		$url = $this->buildUrl();
-		$this->response = $this->request->{$this->method}($url, ['body' => $this->body, 'query' => $this->query]);
+		$this->response = $this->request->{$this->method}($url, ['body' => $this->body, 'query' => $this->query, 'headers' => $this->headers]);
 		return json_decode($this->response->getBody());
 	}
 
