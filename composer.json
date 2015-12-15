@@ -12,8 +12,7 @@
 	],
 	"require": {
 		"php": ">= 5.4.0",
-		"nette/reflection": "2.3.*",
-		"nette/robot-loader": "2.3.*",
+		"nette/nette": "~2.2.0",
 		"guzzlehttp/guzzle": "~5.0"
 	},
 	"require-dev": {
