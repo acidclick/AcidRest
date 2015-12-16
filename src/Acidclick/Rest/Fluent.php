@@ -64,7 +64,7 @@ class Fluent
 	public function execute()
 	{
 		$url = $this->buildUrl();
-		$this->response = $this->request->{$this->method}($url, ['body' => $this->body, 'query' => $this->query, 'headers' => $this->headers]);
+		$this->response = $this->request->{$this->method}($url, ['body' => $this->body, 'query' => $this->query, 'headers' => $this->headers, 'exceptions' => false]);
 		return json_decode($this->response->getBody());
 	}
 
